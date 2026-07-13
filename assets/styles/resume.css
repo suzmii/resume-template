@@ -194,14 +194,6 @@ blockquote a {
     color: var(--text-normal) !important;
 }
 
-/* Custom Class */
-
-.entry-title,
-div[alt="entry-title"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .icon,
 span[alt="icon"] {
@@ -287,9 +279,9 @@ body {
     color: var(--text);
     background-color: var(--paper);
     background-image: url("./paper-background.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 100% 100%;
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: 210mm 297mm;
     font-family: "Source Han Sans", -apple-system, "PingFang SC", sans-serif;
     font-size: 11.5px;
     line-height: 1.55;
@@ -298,28 +290,10 @@ body {
     print-color-adjust: exact;
 }
 
-body:has(> .grid-bg) {
-    background-image: none;
-}
-
 .grid-bg {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    object-fit: fill;
-    pointer-events: none;
+    display: none;
 }
 
-body > :not(.grid-bg) {
-    position: relative;
-    z-index: 1;
-}
 
 
 body * {
@@ -441,29 +415,31 @@ h2:not(:first-of-type) {
     margin-top: 3mm !important;
 }
 
-.entry-title {
+h3 {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 8px;
     margin: 0 0 .6mm;
-    break-inside: avoid;
-}
-
-.entry-title h3 {
-    margin: 0;
     color: var(--ink);
     font-family: "Source Han Sans", sans-serif;
     font-size: 13.5px;
     font-weight: 700;
     line-height: 1.45;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
-.entry-title p {
-    margin: 0;
+h3:has(+ p > code) {
+    margin-bottom: 2mm;
+}
+
+h3 > time {
+    margin-left: auto;
     color: var(--indigo);
     font-family: "Maple Mono", monospace;
     font-size: 10px;
+    font-style: normal;
     font-weight: 500;
     line-height: 1.4;
     text-align: right;
@@ -487,6 +463,8 @@ p:has(> code) {
     font-family: "Maple Mono", monospace;
     font-size: 9.2px;
     line-height: 1.5;
+    break-inside: avoid;
+    break-after: avoid;
 }
 
 p:has(> code) strong {
@@ -521,6 +499,7 @@ ol li {
     color: var(--text);
     font-size: 11.3px;
     line-height: 1.55;
+    break-inside: avoid;
 }
 
 ol li::marker {
@@ -567,6 +546,7 @@ ul li {
     color: var(--text);
     font-size: 11px;
     line-height: 1.6;
+    break-inside: avoid;
 }
 
 ul li > a:first-child {
@@ -594,17 +574,38 @@ ul li > a:first-child {
 @media print {
     html,
     body {
-        width: 210mm;
-        height: 297mm;
+        min-height: 0;
+        height: auto;
     }
 
     html {
+        width: 210mm;
         background: var(--paper);
     }
 
     body {
+        width: 210mm;
         margin: 0;
-        overflow: hidden;
+        padding: 9mm 12mm 6mm;
+        overflow: visible;
+        background-image: none;
         box-shadow: none;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
+    .grid-bg {
+        display: block;
+        position: fixed;
+        z-index: -1;
+        top: -.1mm;
+        left: -.1mm;
+        width: 210.2mm;
+        height: 297.2mm;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        object-fit: fill;
+        pointer-events: none;
     }
 }
