@@ -1,0 +1,19 @@
+# Local configuration and private materials
+/.env
+/archive/
+
+# Publish only the sanitized Markdown template
+*.md
+!/template.md
+
+# Generated files
+/.build/
+/*.pdf
+*.tmp
+
+# Local system files
+.DS_Store
+
+# Publish the shared VS Code preview settings
+!/.vscode/
+!/.vscode/settings.json

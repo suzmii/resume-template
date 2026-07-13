@@ -1,0 +1,609 @@
+/* Resume Markdown Theme — Indigo editorial style */
+
+/* Base Markdown rules */
+
+/* Text */
+
+a,
+a span {
+    font-family: var(--link-font);
+}
+
+code {
+    font-family: var(--code-font);
+}
+
+p,
+li {
+    font-family: "Resume Icon", var(--text-font);
+    font-size: var(--text-size);
+    line-height: var(--line-height);
+    color: var(--text-normal);
+}
+
+/* Title */
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    font-family: "Resume Icon", var(--title-font);
+}
+
+h1 {
+    font-size: var(--h1-size);
+    color: var(--h1-color);
+    line-height: 1.5;
+    border-bottom: 0;
+}
+
+h1,
+blockquote p {
+    text-align: center;
+}
+
+h2 {
+    color: var(--h2-color);
+    font-size: var(--h2-size);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-accent), rgb(0 0 0 / 0) 60%);
+    margin-top: 2.4mm !important;
+    margin-bottom: 1.9mm !important;
+    line-height: 1;
+    padding: 1mm 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: var(--h3-color);
+    line-height: 1.8;
+    font-size: var(--h3-size);
+}
+
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    font-weight: normal;
+    font-size: var(--h3-size) - 0.5pt;
+}
+
+.md-math-block,
+.md-rawblock,
+h1,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+li p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media print {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+}
+
+strong {
+    color: var(--text-strong);
+}
+
+/* List */
+
+ul {
+    list-style-type: '\2022';
+    padding-inline-start: 3mm;
+    padding-inline-end: 1mm;
+}
+
+ol {
+    padding-inline-start: 5mm;
+    padding-inline-end: 1mm;
+}
+
+ol li {
+    padding-left: 0;
+}
+
+ol,
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+li {
+    padding-left: 1.5mm;
+}
+
+ul ::marker {
+    font-weight: bolder;
+}
+
+ol ::marker {
+    font-weight: normal;
+}
+
+/* Avatar */
+
+.avatar,
+img[alt="avatar"] {
+    display: block;
+    position: relative;
+    top: 1mm;
+    right: 0;
+    z-index: 9999;
+    float: right;
+    object-fit: cover;
+    overflow: hidden;
+
+    width: var(--avatar-width);
+    height: var(--avatar-width);
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 0 3mm var(--background-primary);
+    margin: 0 0 0 3mm;
+}
+
+p:has(.avatar, img[alt="avatar"]) {
+    height: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Link */
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Code */
+
+code {
+    background-color: var(--background-primary);
+    color: var(--text-normal) !important;
+    font-size: var(--text-size);
+}
+
+/* Block Quote */
+
+blockquote,
+blockquote * {
+    line-height: 1.6;
+    padding: 0;
+    border-inline-start: none !important;
+    font-size: var(--blockquote-size);
+}
+
+blockquote a {
+    color: var(--text-normal) !important;
+}
+
+/* Custom Class */
+
+.entry-title,
+div[alt="entry-title"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon,
+span[alt="icon"] {
+    color: var(--color-accent);
+}
+
+/* Horizontal Line */
+
+hr {
+    border-top: 2px solid #dae3eac9;
+    border-bottom: none;
+    margin: 15mm 0 12mm 0;
+}
+
+@media print {
+    hr {
+        page-break-after: always;
+        margin: 0;
+        visibility: hidden;
+    }
+}
+
+/* Resume theme */
+
+@font-face {
+    font-family: "Maple Mono";
+    src: url("../fonts/MapleMono-NF-CN-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Maple Mono";
+    src: url("../fonts/MapleMono-NF-CN-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Source Han Sans";
+    src: url("../fonts/SourceHanSansCN-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Source Han Sans";
+    src: url("../fonts/SourceHanSansCN-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Resume Icon";
+    src: url("../fonts/iconfont.ttf") format("truetype");
+    font-weight: 400;
+}
+
+:root {
+    --ink: #2d3748;
+    --text: #3a3a3a;
+    --muted: #5a6573;
+    --indigo: #5a67d8;
+    --indigo-light: #667eea;
+    --indigo-pale: #ebf4ff;
+    --line: #eaecef;
+    --paper: #ffffff;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+html {
+    background: #edf0f5;
+}
+
+body {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 9mm 12mm 6mm;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    color: var(--text);
+    background-color: var(--paper);
+    background-image: url("./grid-preview.svg");
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    font-family: "Source Han Sans", -apple-system, "PingFang SC", sans-serif;
+    font-size: 11.5px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body:has(> .grid-bg) {
+    background-image: none;
+}
+
+.grid-bg {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    object-fit: fill;
+    pointer-events: none;
+}
+
+body > :not(.grid-bg) {
+    position: relative;
+    z-index: 1;
+}
+
+
+body * {
+    box-sizing: border-box;
+}
+
+p,
+li {
+    color: var(--text);
+    font-family: "Source Han Sans", -apple-system, "PingFang SC", sans-serif;
+    font-size: 11.3px;
+    line-height: 1.55;
+}
+
+h1 {
+    margin: 0;
+    padding: .5mm 0 .5mm 3mm;
+    border: 0;
+    border-left: 5px solid var(--indigo) !important;
+    color: var(--ink);
+    font-family: "Source Han Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-align: left;
+}
+
+blockquote {
+    margin: 0 0 3.5mm;
+    padding: 2mm 0 3.5mm !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+    background: transparent !important;
+}
+
+blockquote p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6mm;
+    margin: 0;
+    padding: 0;
+    color: var(--muted);
+    line-height: 1.4;
+    text-align: left;
+}
+
+.role {
+    flex: 0 0 auto;
+    color: var(--indigo);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    color: var(--muted);
+    font-family: "Maple Mono", monospace;
+    font-size: 10px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-item + .contact-item {
+    margin-left: 3mm;
+}
+
+.contact-icon {
+    margin-right: .8mm;
+    color: var(--indigo-light);
+    font-family: "Resume Icon";
+    font-size: 10px;
+    font-style: normal;
+}
+
+.contact code,
+.contact a {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit !important;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.contact a {
+    color: var(--indigo) !important;
+    border-bottom: 1px solid var(--indigo-light);
+}
+
+h2 {
+    display: block;
+    width: 100%;
+    margin: 0 0 1.5mm !important;
+    padding: .6mm 0 .6mm 3mm;
+    border: 0;
+    border-left: 4px solid var(--indigo) !important;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-family: "Source Han Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 1.4;
+    break-after: avoid;
+}
+
+h2:not(:first-of-type) {
+    margin-top: 3mm !important;
+}
+
+.entry-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 0 0 .6mm;
+    break-inside: avoid;
+}
+
+.entry-title h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Source Han Sans", sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.entry-title p {
+    margin: 0;
+    color: var(--indigo);
+    font-family: "Maple Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: right;
+    white-space: nowrap;
+}
+
+p {
+    margin: 0;
+}
+
+p:has(> code) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5mm;
+    margin: 0 0 2mm;
+    padding: .8mm 2mm;
+    border-left: 3px solid var(--indigo-light);
+    border-radius: 0 3px 3px 0;
+    background: var(--indigo-pale);
+    font-family: "Maple Mono", monospace;
+    font-size: 9.2px;
+    line-height: 1.5;
+}
+
+p:has(> code) strong {
+    margin-right: .5mm;
+    color: var(--muted);
+    font-family: "Source Han Sans", sans-serif;
+    font-weight: 700;
+}
+
+p:has(> code) code {
+    margin: 0;
+    padding: .15mm 1.2mm;
+    border: 0;
+    border-radius: 3px;
+    background: #ffffff;
+    color: var(--indigo) !important;
+    font-family: "Maple Mono", monospace;
+    font-size: 9.2px;
+    font-weight: 500;
+    line-height: inherit;
+}
+
+ol {
+    display: grid;
+    gap: .8mm;
+    margin: 0;
+    padding: 0 0 0 4.5mm;
+}
+
+ol li {
+    padding-left: .5mm;
+    color: var(--text);
+    font-size: 11.3px;
+    line-height: 1.55;
+}
+
+ol li::marker {
+    color: var(--indigo);
+    font-family: "Maple Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+}
+
+strong {
+    color: var(--indigo);
+    font-weight: 700;
+}
+
+p:not(:has(> code)) strong::before,
+ol strong::before,
+ul strong::before {
+    content: "「";
+    font-weight: 400;
+    opacity: .6;
+}
+
+p:not(:has(> code)) strong::after,
+ol strong::after,
+ul strong::after {
+    content: "」";
+    font-weight: 400;
+    opacity: .6;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1mm;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding: 0 0 .8mm 34.5mm;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+ul li > a:first-child {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    color: var(--indigo);
+    border-bottom: 1px solid var(--indigo-light);
+    font-family: "Maple Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@media screen {
+    body {
+        margin: 8mm auto;
+        box-shadow: 0 0 4mm rgb(45 55 72 / 18%);
+    }
+}
+
+@media print {
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    html {
+        background: var(--paper);
+    }
+
+    body {
+        margin: 0;
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
