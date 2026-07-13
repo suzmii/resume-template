@@ -264,7 +264,7 @@ hr {
     --indigo-light: #667eea;
     --indigo-pale: #ebf4ff;
     --line: #eaecef;
-    --paper: #ffffff;
+    --paper: #fcfbf7;
 }
 
 @page {
@@ -286,9 +286,10 @@ body {
     isolation: isolate;
     color: var(--text);
     background-color: var(--paper);
-    background-image: url("./grid-preview.svg");
-    background-repeat: repeat;
-    background-size: 20px 20px;
+    background-image: url("./paper-background.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
     font-family: "Source Han Sans", -apple-system, "PingFang SC", sans-serif;
     font-size: 11.5px;
     line-height: 1.55;

@@ -8,12 +8,11 @@ TITLE ?= Resume
 
 BUILD_DIR ?= .build
 HTML := $(BUILD_DIR)/$(NAME).html
-PRINT_GRID_FRAGMENT := $(BUILD_DIR)/grid-print.html
+BACKGROUND_FRAGMENT := $(BUILD_DIR)/paper-background.html
 PDF := $(NAME).pdf
 STYLES := assets/styles/resume.css
 ASSETS := \
-	assets/styles/grid-preview.svg \
-	assets/styles/grid-print.png \
+	assets/styles/paper-background.png \
 	assets/fonts/SourceHanSansCN-Regular.ttf \
 	assets/fonts/SourceHanSansCN-Bold.ttf \
 	assets/fonts/MapleMono-NF-CN-Regular.ttf \
@@ -50,14 +49,14 @@ $(HTML): $(SOURCE_FILE) $(STYLES) $(ASSETS) Makefile
 		exit 1; \
 	}
 	@mkdir -p "$(BUILD_DIR)"
-	@printf '%s\n' '<img class="grid-bg" src="../assets/styles/grid-print.png" alt="" aria-hidden="true">' > "$(PRINT_GRID_FRAGMENT)"
+	@printf '%s\n' '<img class="grid-bg" src="../assets/styles/paper-background.png" alt="" aria-hidden="true">' > "$(BACKGROUND_FRAGMENT)"
 	@"$(PANDOC)" "$(SOURCE_FILE)" \
 		--from="gfm+raw_html" \
 		--to="html5" \
 		--standalone \
 		--metadata pagetitle="$(TITLE)" \
 		--css="../assets/styles/resume.css" \
-		--include-before-body="$(PRINT_GRID_FRAGMENT)" \
+		--include-before-body="$(BACKGROUND_FRAGMENT)" \
 		--output="$@"
 	@echo "wrote $(HTML)"
 
