@@ -434,6 +434,10 @@ h3:has(+ p > code) {
     margin-bottom: 2mm;
 }
 
+ol + h3 {
+    margin-top: 2mm;
+}
+
 h3 > time {
     margin-left: auto;
     color: var(--indigo);
@@ -456,7 +460,7 @@ p:has(> code) {
     align-items: center;
     gap: 1.5mm;
     margin: 0 0 2mm;
-    padding: .8mm 2mm;
+    padding: 1mm 2mm .6mm;
     border-left: 3px solid var(--indigo-light);
     border-radius: 0 3px 3px 0;
     background: var(--indigo-pale);

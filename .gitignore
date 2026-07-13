@@ -5,6 +5,7 @@
 # Publish only the sanitized Markdown template
 *.md
 !/template.md
+!/README.md
 
 # Generated files
 /.build/
