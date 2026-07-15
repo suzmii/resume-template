@@ -32,9 +32,9 @@ make
 
 | 自定义内容 | 修改位置 | 主要参数 |
 | --- | --- | --- |
-| 主色与纸张色 | `assets/styles/resume.css` 的 `:root` | `--ink`、`--text`、`--muted`、`--indigo`、`--indigo-light`、`--indigo-pale`、`--line`、`--paper` |
-| 页面留白 | `assets/styles/resume.css` | 屏幕与打印区域中的 `padding: 9mm 12mm 6mm` |
-| 字号与行距 | `assets/styles/resume.css` | `font-size`、`line-height`，以及 `h1`、`h2`、`h3` 的字号 |
+| 主题颜色 | `assets/styles/resume.css` 顶部的 `:root` | `--indigo`、`--indigo-light`、`--indigo-pale`、`--ink`、`--text`、`--muted`、`--line`、`--paper` |
+| 页面尺寸与边距 | `assets/styles/resume.css` 顶部的 `:root` | `--page-width`、`--page-height`、`--page-padding-top`、`--page-padding-horizontal`、`--page-padding-bottom`、`--preview-page-margin` |
+| 字号与排版 | `assets/styles/resume.css` 顶部的 `:root` | `--text-size`、`--small-text-size`、`--h1-size`、`--h2-size`、`--h3-size`、`--text-line-height`、`--heading-line-height`、`--title-letter-spacing` |
 | 字体 | `assets/styles/resume.css`、`assets/fonts/` | `@font-face` 与各区域的 `font-family` |
 | 网格背景 | `scripts/generate_background.py` | `GRID_SIZE_CSS_PX`、`GRID_LINE_CSS_PX`、`GRID_COLOR`、`PAPER_COLOR` |
 | 输入与标题 | `.env` | `SOURCE`、`TITLE` |
