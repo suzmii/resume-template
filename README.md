@@ -1,22 +1,17 @@
-<div align="center">
-
 # Resume Template
-
-简洁美观的 Markdown 简历模板。
-
-<br>
 
 <img src="./assets/resume-preview.png" alt="八爪猫虚拟简历展示" width="780">
 
-<sub>[查看 template.md](./template.md)</sub>
+[查看 template.md](./template.md)
 
-</div>
 
 ## Design
 
 **克制、清晰。**
 
-浅色方格纸建立页面质感，靛蓝作为唯一重点色；标题、时间、技术栈与成果形成明确层级，在高信息密度下仍保持舒展。中文字体、等宽字体与图标字体随项目提供，屏幕预览和 PDF 使用同一套视觉规则。
+- 浅色方格纸建立页面质感，靛蓝作为唯一重点色
+- 标题、时间、技术栈与成果形成明确层级，在高信息密度下仍保持舒展。
+- 中文字体、等宽字体与图标字体随项目提供，屏幕预览和 PDF 使用同一套视觉规则。
 
 ## Usage
 

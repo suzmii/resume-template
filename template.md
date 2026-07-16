@@ -2,13 +2,13 @@
 
 > <span class="role">开源平台工程师 / 深海全栈开发 / 八触手协作</span><span class="contact"><span class="contact-item"><span class="contact-icon">&#xe60f;</span>`(+00) 888-8888`</span><span class="contact-item"><span class="contact-icon">&#xe7ca;</span>`octocat@example.com`</span><span class="contact-item"><span class="contact-icon">&#xe799;</span>[octocat](https://example.com/octocat)</span></span>
 
-## 教育经历
+## 教育经历 <span class="section-en">EDUCATION</span>
 
 ### 八爪科技大学 - 软件工程 <time>2008.02 - 2012.06</time>
 
 主修潮汐算法与分布式触手协作；获“认证八爪编码员”，带领 OctoStudio 完成 8 个海洋开源实验。
 
-## 工作经验
+## 工作经验 <span class="section-en">EXPERIENCE</span>
 
 ### 章小鱼实验室 - 开源平台工程师 <time>2012.07 - 至今</time>
 
@@ -25,7 +25,7 @@
 1. **种群仪表盘**：构建珊瑚礁数据看板，将声呐采样转换为潮汐趋势、栖息热区与异常提醒。
 2. **敏捷章鱼实践**：参与触手站会与代码审议，补齐架构、接口和排障文档，帮助新成员快速下潜。
 
-## 项目经历
+## 项目经历 <span class="section-en">EXPERIENCE</span>
 
 ### GitFlix - 深海电影推荐站 <time>2014.03 - 2014.08</time>
 
@@ -41,7 +41,7 @@
 1. **贡献雷达**：聚合提交、议题与合并请求，生成触手分工图、活跃潮汐和仓库健康度。
 2. **珊瑚徽章**：设计八爪主题成就体系，帮助开发者设定里程碑并分享自己的开源航线。
 
-## 专业技能
+## 专业技能 <span class="section-en">SKILLSETS</span>
 
 **技能栈：** `Octolang` / `OctoScript` / `Git` / `Docker` / `可观测性` / `持续交付`
 

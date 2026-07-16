@@ -14,7 +14,7 @@
 
     /* 常用字号 */
     --text-size: 12.5px;           /* 正文、列表和开源项目 */
-    --small-text-size: 10px;       /* 联系方式、日期、技术栈和编号 */
+    --small-text-size: 11px;       /* 联系方式、日期、技术栈和编号 */
     --h1-size: 25px;               /* 姓名 */
     --h2-size: 15px;               /* 教育经历、工作经验等栏目标题 */
     --h3-size: 13.5px;             /* 公司名、项目名等经历标题 */
@@ -24,7 +24,7 @@
     --page-height: 297mm;           /* A4 页面高度，一般不需要修改 */
     --page-padding-top: 7mm;        /* 正文距页面顶部 */
     --page-padding-horizontal: 11mm; /* 正文距页面左右两侧 */
-    --page-padding-bottom: 6mm;     /* 正文距页面底部 */
+    --page-padding-bottom: 5mm;     /* 正文距页面底部 */
     --preview-page-margin: 8mm;     /* VS Code 或浏览器预览时的页面外间距 */
 
     /* 细节排版，一般不需要调整 */
@@ -242,7 +242,7 @@ hr {
 }
 
 @media print {
-    hr {
+    body:has(.role, .contact) hr {
         page-break-after: always;
         margin: 0;
         visibility: hidden;
@@ -332,7 +332,7 @@ li {
 }
 
 h1 {
-    margin: 0;
+    margin: 0 0 1.5mm;
     padding: .5mm 0 .5mm 3mm;
     border: 0;
     border-left: 5px solid var(--indigo) !important;
@@ -345,15 +345,17 @@ h1 {
     text-align: left;
 }
 
-blockquote {
+/* Resume contact header */
+
+blockquote:has(.role, .contact) {
     margin: 0 0 2mm;
-    padding: 1mm 0 1.5mm !important;
+    padding: 0 0 1.5mm !important;
     border: 0 !important;
     border-bottom: 1px solid var(--line) !important;
     background: transparent !important;
 }
 
-blockquote p {
+blockquote:has(.role, .contact) p {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -404,6 +406,7 @@ blockquote p {
 .contact a {
     border: 0;
     border-radius: 0;
+    padding: 0;
     background: transparent;
     color: inherit !important;
     font-family: inherit;
@@ -424,7 +427,7 @@ h2 {
     padding: .6mm 0 .6mm 3mm;
     border: 0;
     border-left: 4px solid var(--indigo) !important;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid color-mix(in srgb, var(--indigo) 22%, var(--line)) !important;
     color: var(--ink);
     font-family: "Source Han Sans", sans-serif;
     font-size: var(--h2-size);
@@ -437,6 +440,20 @@ h2 {
 h2:not(:first-of-type) {
     margin-top: 3mm !important;
 }
+
+.section-en {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 2.2mm;
+    color: color-mix(in srgb, var(--indigo) 38%, var(--paper));
+    font-family: "Maple Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
 
 h3 {
     display: flex;
@@ -473,11 +490,13 @@ h3 > time {
     white-space: nowrap;
 }
 
-p {
+body:has(.role, .contact) p {
     margin: 0;
 }
 
-p:has(> code) {
+/* Resume skill tags */
+
+body:has(.role, .contact) p:has(> code) {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -494,14 +513,14 @@ p:has(> code) {
     break-after: avoid;
 }
 
-p:has(> code) strong {
+body:has(.role, .contact) p:has(> code) strong {
     margin-right: .5mm;
     color: var(--muted);
     font-family: "Source Han Sans", sans-serif;
     font-weight: 700;
 }
 
-p:has(> code) code {
+body:has(.role, .contact) p:has(> code) code {
     margin: 0;
     padding: .15mm 1.2mm;
     border: 0;
@@ -557,7 +576,13 @@ ul strong::after {
     opacity: .6;
 }
 
-ul {
+body:has(.role, .contact) :is(ol, ul) {
+    margin-bottom: 0;
+}
+
+/* Resume project index */
+
+body:has(.role, .contact) ul {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1mm;
@@ -566,7 +591,7 @@ ul {
     list-style: none;
 }
 
-ul li {
+body:has(.role, .contact) ul li {
     position: relative;
     padding: 0 0 .8mm 34.5mm;
     border-bottom: 1px solid var(--line);
@@ -576,7 +601,11 @@ ul li {
     break-inside: avoid;
 }
 
-ul li > a:first-child {
+body:has(.role, .contact) ul li::before {
+    content: none;
+}
+
+body:has(.role, .contact) ul li > a:first-child {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -634,5 +663,155 @@ ul li > a:first-child {
         border: 0;
         object-fit: fill;
         pointer-events: none;
+    }
+}
+
+/* Standard Markdown elements */
+
+body {
+    overflow-wrap: anywhere;
+}
+
+p {
+    margin: 0 0 1.5mm;
+}
+
+:is(ol, ul) {
+    margin-bottom: 1.5mm;
+}
+
+:is(ol, ul) :is(ol, ul) {
+    margin-top: .8mm;
+    margin-bottom: 0;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .8mm;
+    margin: 0 0 1.5mm;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding: 0 0 0 4mm;
+    border: 0;
+    color: var(--text);
+    font-size: var(--text-size);
+    line-height: var(--text-line-height);
+    break-inside: avoid;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    top: .79em;
+    left: .8mm;
+    width: .8mm;
+    height: 2mm;
+    transform: translateY(-50%);
+    border-radius: 99px;
+    background: linear-gradient(var(--indigo-light), var(--indigo));
+    box-shadow: 0 0 0 .4mm var(--indigo-pale);
+}
+
+ul ul li::before {
+    height: 1.4mm;
+    background: var(--indigo-light);
+    box-shadow: none;
+    opacity: .7;
+}
+
+a {
+    border-bottom: 1px solid var(--indigo-light);
+    color: var(--indigo);
+    font-size: inherit;
+    font-weight: 500;
+}
+
+code {
+    padding: .1em .35em;
+    border-radius: 3px;
+    background: var(--indigo-pale);
+    color: var(--indigo) !important;
+    font-family: "Maple Mono", monospace;
+    font-size: .95em;
+}
+
+pre {
+    overflow-x: auto;
+    margin: 0 0 2mm;
+    padding: 2.5mm 3mm;
+    border: 1px solid #dfe3f7;
+    border-radius: 5px;
+    background: #f6f7fc;
+    color: var(--ink);
+    line-height: var(--text-line-height);
+}
+
+pre code {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit !important;
+    font-size: var(--small-text-size);
+    font-weight: 400;
+    line-height: inherit;
+}
+
+blockquote {
+    margin: 0 0 2mm;
+    padding: 1.5mm 2.5mm !important;
+    border: 0 !important;
+    border-left: 4px solid var(--indigo-light) !important;
+    background: var(--indigo-pale) !important;
+    color: var(--indigo);
+}
+
+blockquote p {
+    display: block;
+    margin: 0;
+    color: inherit;
+    font-size: var(--text-size);
+    line-height: var(--text-line-height);
+    text-align: left;
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin: 0 0 2mm;
+    border-collapse: collapse;
+}
+
+:is(th, td) {
+    padding: 1.5mm 2mm;
+    border: 1px solid var(--line);
+    text-align: left;
+}
+
+th {
+    background: var(--indigo-pale);
+    color: var(--ink);
+    font-weight: 700;
+}
+
+img:not(.grid-bg, .avatar, [alt="avatar"]) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2mm auto;
+    border-radius: 5px;
+    box-shadow: 2px 4px 7px rgb(45 55 72 / 18%);
+}
+
+@media print {
+    hr {
+        margin: 2mm 0;
+        visibility: visible;
+        page-break-after: auto;
     }
 }
