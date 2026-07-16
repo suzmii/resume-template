@@ -257,11 +257,6 @@ hr {
     font-weight: 400;
 }
 
-@font-face {
-    font-family: "Maple Mono";
-    src: url("../fonts/MapleMono-NF-CN-Bold.ttf") format("truetype");
-    font-weight: 700;
-}
 
 @font-face {
     font-family: "Source Han Sans";

@@ -16,7 +16,6 @@ ASSETS := \
 	assets/fonts/SourceHanSansCN-Regular.ttf \
 	assets/fonts/SourceHanSansCN-Bold.ttf \
 	assets/fonts/MapleMono-NF-CN-Regular.ttf \
-	assets/fonts/MapleMono-NF-CN-Bold.ttf \
 	assets/fonts/iconfont.ttf
 
 PANDOC ?= pandoc
