@@ -13,7 +13,7 @@
     --paper: #fcfbf7;             /* 页面底色 */
 
     /* 常用字号 */
-    --text-size: 12.5px;           /* 正文、列表和开源项目 */
+    --text-size: 12.8px;           /* 正文、列表和开源项目 */
     --small-text-size: 11px;       /* 联系方式、日期、技术栈和编号 */
     --h1-size: 25px;               /* 姓名 */
     --h2-size: 15px;               /* 教育经历、工作经验等栏目标题 */
@@ -24,11 +24,11 @@
     --page-height: 297mm;           /* A4 页面高度，一般不需要修改 */
     --page-padding-top: 7mm;        /* 正文距页面顶部 */
     --page-padding-horizontal: 11mm; /* 正文距页面左右两侧 */
-    --page-padding-bottom: 5mm;     /* 正文距页面底部 */
+    --page-padding-bottom: 3mm;     /* 正文距页面底部 */
     --preview-page-margin: 8mm;     /* VS Code 或浏览器预览时的页面外间距 */
 
     /* 细节排版，一般不需要调整 */
-    --text-line-height: 1.58;       /* 正文行距 */
+    --text-line-height: 1.62;       /* 正文行距 */
     --heading-line-height: 1.2;     /* 标题和小字行距 */
     --title-letter-spacing: .5px;  /* 栏目标题字间距，姓名使用两倍 */
 }
